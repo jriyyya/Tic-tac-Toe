@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="" width=device-width,initial-scale=1.0>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- <div class="bg-components">
+        <div class="this-class">&#9711;</div>
+    </div> -->
+
+    <div id="game-name">
+        Tic  -<span>tXc</span>-  Toe
+    </div>
+    <div id="game-chooser">
+        <button onclick="activateGame(this);" id="game-1" class="btn-hover">Against a Human<span>.</span></button>
+        <button onclick="activateGame(this);" id="game-2" class="btn-hover">Against a Dumb Computer<span>.</span></button>
+        <button onclick="activateGame(this);" id="game-3" class="btn-hover">Against a Smart AI<span>.</span></button>
+    </div>
+
+    <!-- GAME_BOX-->
+    <div id="game-container">
+        <div class="grid-box">
+            <div id="error"></div>
+            <div class="row">
+                <button onclick="btnClick(this);" id="btn-1" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-2" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-3" class="ttt-btn"></button>
+            </div>
+            <div class="row">
+                <button onclick="btnClick(this);" id="btn-4" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-5" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-6" class="ttt-btn"></button>
+            </div>
+            <div class="row">
+                <button onclick="btnClick(this);" id="btn-7" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-8" class="ttt-btn"></button>
+                <button onclick="btnClick(this);" id="btn-9" class="ttt-btn"></button>
+            </div>
+
+        </div>
+        
+        <button onclick="gameStart()">Start</button>
+        <div id="playerTurn"></div>
+        <div id="game-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
