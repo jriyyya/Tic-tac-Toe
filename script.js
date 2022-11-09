@@ -17,6 +17,7 @@ const renderBoard = () => {
     e.textContent = boardState[number - 1];
     if(boardState[number-1]!=emptyChar){
       e.style.backgroundColor='var(--text-primary)';
+      e.style.opacity="1";
     }
   });
 };
@@ -47,14 +48,15 @@ const btnClick = (e) => {
 
 function gameStart() {
   document.getElementById("game-result").innerHTML = "Game On!";
+  document.getElementById("start").style.display="none";
   update();
 }
 
 const displayTurn = () => {
   if (turn == 1) {
-    document.getElementById("playerTurn").innerHTML = "Player1 Turn";
+    document.getElementById("playerTurn").innerHTML = "Player X Turn";
   } else {
-    document.getElementById("playerTurn").innerHTML = "Player2 Turn";
+    document.getElementById("playerTurn").innerHTML = "Player O Turn";
   }
 };
 
@@ -84,6 +86,7 @@ const winCheck = () => {
       for (let i = 0; i < 9; i++) {
         boardState[i] = emptyChar;
       }
+      document.getElementById("startAgain").style.display='inline-block';
       boardState[w[0]] = boardState[w[1]] = boardState[w[2]] = winningSym;
       renderBoard();
       return boardState[w[0]] == "x" ? 1 : 2;
@@ -229,3 +232,11 @@ const minimax = (isMaximising) => {
       });
     });
 })();
+
+const startAgain = () =>{
+  for(let i;i<9;i++){
+    boardState[i]=emptyChar;
+  }
+  document.getElementById('game-chooser').style.display='flex';
+  document.getElementById('game-container').style.display='none';
+}
